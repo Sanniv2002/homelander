@@ -4,16 +4,16 @@ interface SpacePromptProps {
 
 export function SpacePrompt({ spaceButtonAnimation }: SpacePromptProps) {
   return (
-    <div className="fixed bottom-8 right-8 bg-white rounded-2xl shadow-lg overflow-hidden hidden md:block">
+    <div className="fixed bottom-8 right-8 bg-white rounded-2xl shadow-lg overflow-hidden hidden lg:block">
       <img 
-        src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=600&fit=crop" 
+        src="/hello.png" 
         alt="Customer Service Representative" 
-        className="w-[400px] h-[300px] object-cover"
+        className="w-[300px] h-[400px] object-cover"
       />
-      <div className="absolute bottom-4 left-4 bg-white rounded-lg px-4 py-2 shadow-md flex items-center gap-2">
+      <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm rounded-lg px-4 py-2 shadow-md flex items-center gap-2">
         <span>Hold</span>
         <span 
-          className={`bg-[#F4845F] text-white px-3 py-1 rounded transition-transform ${
+          className={`bg-gradient-to-r from-purple-500 to-pink-500 text-white px-3 py-1 rounded transition-transform ${
             spaceButtonAnimation ? 'transform -translate-y-1' : ''
           }`}
         >

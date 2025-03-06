@@ -1,16 +1,39 @@
+import { useEffect, useState } from 'react';
+
 export function AudioWaveform() {
   return (
-    <div className="flex items-center justify-center gap-1 h-full">
-      {Array.from({ length: 40 }).map((_, i) => (
-        <div
-          key={i}
-          className="w-1 bg-gradient-to-t from-orange-400 to-red-400"
-          style={{
-            height: `${Math.sin(Date.now() / 200 + i) * 20 + 30}px`,
-            transition: 'height 150ms ease',
-          }}
-        />
-      ))}
+    <div className="flex items-center justify-center gap-[2px] h-full">
+      {Array.from({ length: 32 }).map((_, i) => {
+        const baseHeight = 20;
+        const variableHeight = 15;
+        const delay = i * 30;
+
+        return (
+          <div
+            key={i}
+            className="w-full rounded-full bg-gradient-to-t from-purple-500 to-pink-500"
+            style={{
+              height: `${baseHeight}px`,
+              animation: `wave 1s ease-in-out infinite ${delay}ms`,
+              transformOrigin: 'center',
+            }}
+          />
+        );
+      })}
+
+      {/* Define the keyframes in a style tag */}
+      <style>
+        {`
+          @keyframes wave {
+            0%, 100% {
+              height: 20px;
+            }
+            50% {
+              height: 35px;
+            }
+          }
+        `}
+      </style>
     </div>
   );
 }

@@ -40,10 +40,10 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-yellow-50 via-red-50 to-purple-50">
+    <div className="min-h-screen bg-gradient-to-br from-indigo-100 via-purple-100 to-pink-100">
       <Logo />
       <PartnerLogos />
-      <div className="fixed bottom-0 right-0 left-0 flex">
+      <div className="fixed bottom-0 right-0 left-0 flex flex-col md:flex-row">
         <ChatInterface isSpacePressed={isSpacePressed} />
         <SpacePrompt spaceButtonAnimation={spaceButtonAnimation} />
       </div>
